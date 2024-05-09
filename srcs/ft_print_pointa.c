@@ -13,39 +13,39 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int ft_point_hex(unsigned long long num)
+int	ft_point_hex(unsigned long long num)
 {
-    int count_len;
-    const char *hold;
+	int			count_len;
+	const char	*hold;
 
-    count_len = 0;
-    hold = "0123456789abcdef";
-    if(num < 16)
-    {
-        ft_putchar_fd(hold[num] , 1);
-        return (1);
-    }
-    else 
-    {
-        count_len += ft_point_hex(num / 16);
-        ft_putchar_fd(hold[num % 16] , 1);
-        return (count_len + 1);
-    }
+	count_len = 0;
+	hold = "0123456789abcdef";
+	if (num < 16)
+	{
+		ft_putchar_fd(hold[num], 1);
+		return (1);
+	}
+	else
+	{
+		count_len += ft_point_hex(num / 16);
+		ft_putchar_fd(hold[num % 16], 1);
+		return (count_len + 1);
+	}
 }
 
-int ft_print_point(unsigned long long c)
+int	ft_print_point(unsigned long long c)
 {
-    unsigned long long len;
+	unsigned long long	len;
 
-    len = 2;
-    ft_putstr_fd("0x" , 1);
-    if(c == 0)
-    {
-        ft_putchar_fd('0' , 1);
-        return (len + 1);   
-    }
-    else 
-        return (len + ft_point_hex(c));
+	len = 2;
+	ft_putstr_fd("0x", 1);
+	if (c == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (len + 1);
+	}
+	else
+		return (len + ft_point_hex(c));
 }
 
 // #include <stdio.h>

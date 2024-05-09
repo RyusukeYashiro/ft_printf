@@ -6,13 +6,13 @@
 /*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:37:58 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/09 13:53:33 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2024/05/09 20:08:53 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_percent(void)
+int	ft_print_percent(void)
 {
-    return(ft_print_char('%'));
+	return (ft_print_char('%'));
 }
