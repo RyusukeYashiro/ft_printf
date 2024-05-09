@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:34:45 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/05 06:46:33 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/09 18:55:57 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-int ft_print_char(int c)
+int ft_print_char(char c)
 {
-    char p;
-
-    p = (char)c;
-    return(write(1, &p , 1));
+    return(write(1, &c , 1));
 }
 
 
-int ft_convert_format(va_list args , const char format)
+int ft_convert_format(va_list args ,const char format)
 {
     if(format == 'c')
         return (ft_print_char(va_arg(args , int)));
@@ -33,41 +30,52 @@ int ft_convert_format(va_list args , const char format)
     if(format == 'u')
         return (ft_print_unit(va_arg(args , unsigned int)));
     if(format == 'x' || format == 'X')
-        return (ft_print_alpha(va_arg(args , unsigned int),format));
+        return (ft_print_hex(va_arg(args , unsigned int),format));
     if(format == '%')
         return (ft_print_percent());
-    return (0);
+    if(format == 'p')
+        return (ft_print_point(va_arg(args , unsigned long long)));
+    return (-1);
 }
 
 
 int ft_printf(const char *format,  ...)
 {
-    int i;
     int ft_print_len;  //printfは戻り値がintの値を返す。実際に書き込まれた文字数。負の値の場合はエラーあり。
+    int temp;
     va_list args;
-    char *str;
 
     va_start(args,format);
-    i = 0;
     ft_print_len = 0;
-    str = (char *)format;
-    while(str[i])
+    if(!format)
+        return (0);
+    while(*format)
     {
-        if(str[i] == '%')
+        temp = 0;
+        if(*format == '%')
         {
-            ft_print_len = ft_convert_format(args , str[i+1]);
-            i++;
-        }
+            format++;
+            temp = ft_convert_format(args , *format);
+        }        
         else
-        ft_print_len += ft_print_char(str[i]);
-        i++;
+            temp = ft_print_char(*format);
+        if(ft_print_len < 0)
+            return (-1);
+        ft_print_len += temp;
+        format++;
     }
     va_end(args);
     return (ft_print_len);
 }
 
+#include <stdio.h>
 int main(void)
 {
-    ft_printf("test" , 3 , 'a');
+    int a;
+    int b;
+    a = ft_printf("ans = %dです%u\n" , 90 , 80);
+    b = printf("ans = %dです%u\n" , 90 , 70);
+    printf("%d\n" , a);
+    printf("%d\n" , b);
     return (0);
 }

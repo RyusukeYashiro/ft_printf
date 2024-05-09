@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 02:59:44 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/05 05:24:14 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:56:22 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int ft_print_str(char *s)
     }
     while(s[i])
     {
-        write(1 , &s[i] ,1);
+        ft_putchar_fd(s[i] , 1);
         i++;
     }
     return (i);

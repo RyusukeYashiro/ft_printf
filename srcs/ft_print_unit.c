@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 03:35:14 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/05 05:34:19 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/09 19:00:57 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int ft_uni_num_len(unsigned int c)
 {
     int num_len;
 
+    num_len = 0;
     if(c == 0)
         num_len = 1;
     while (c > 0)
@@ -39,9 +40,10 @@ char *ft_uitoa(unsigned int c)
     str[len] = '\0';
     if(c == 0)
         *str = '0';
-    while(c > 0)
+    len--;
+    while(c > 0 && len >= 0)
     {
-        str[len] = (c & 10) + '0';
+        str[len] = (c % 10) + '0';
         c /= 10;
         len--;
     }
@@ -53,12 +55,25 @@ int ft_print_unit(unsigned int c)
     unsigned int len;
     char *hold;
 
-    hold = ft_uitoa(c);
     len = 0;
+    hold = ft_uitoa(c);
     if(!hold)
         return (0);
-    while(hold[len])
-        len++;
-    ft_putstr_fd(hold , 1);
+    len = ft_print_str(hold);
     return (len);
 }
+
+// #include <stdio.h>
+// int main(int ac , char *av[])
+// {
+//     if(ac > 1)
+//     {
+//         int a = ft_atoi(av[1]);
+//         unsigned int test = ft_print_unit(a);
+//         printf("\n");
+//         printf("test_len  = %d" , test);
+//         printf("\n");
+//         printf("printf = %u" , a);
+//     }
+//     return (0);
+// }

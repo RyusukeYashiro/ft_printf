@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:37:58 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/05 05:40:00 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:53:33 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int ft_print_percent(void)
 {
-    return (ft_putchar_fd('%' , 1));
+    return(ft_print_char('%'));
 }
