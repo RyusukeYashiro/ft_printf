@@ -6,7 +6,7 @@
 /*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:34:45 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/09 20:10:30 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2024/05/09 20:53:16 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ int	ft_printf(const char *format, ...)
 // {
 //     int a;
 //     int b;
-//     a = ft_printf("ans = %Xです%d,%p\n" , 90, 70, 10);
-//     b = printf("ans = %Xです%d,%p\n" , 90 , 70, 10);
+//     a = ft_printf("ans = %Xです%p,%d\n" , 90, 70, NULL);
+//     b = printf("ans = %Xです%p,%d\n" , 90 , 70, NULL);
 //     printf("%d\n" , a);
 //     printf("%d\n" , b);
 //     return (0);
 // }
-//gcc -Iinclude -o test srcs/ft_printf.c Libft/libft.a libftprintf.a
+// gcc -Iinclude -o test srcs/ft_printf.c Libft/libft.a libftprintf.a
