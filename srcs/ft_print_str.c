@@ -23,7 +23,7 @@ int	ft_print_str(char *s)
 		ft_putstr_fd("(null)", 1);
 		return (6);
 	}
-	else if(!s[0])
+	else if (!s[0])
 	{
 		return (0);
 	}

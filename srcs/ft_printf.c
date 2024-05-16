@@ -6,7 +6,7 @@
 /*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:34:45 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/16 15:56:57 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:42:03 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int	ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	ft_print_len = 0;
-	if (!format)
-		return (0);
 	while (*format)
 	{
 		temp = 0;
@@ -66,16 +64,19 @@ int	ft_printf(const char *format, ...)
 	return (ft_print_len);
 }
 
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q a.out");
+// }
 // #include <stdio.h>
 // int main(void)
 // {
 //     int a;
 //     int b;
-//     a =ft_printf("%s", (char *)NULL);
-//     b =printf("%s", (char *)NULL);
+//     a = ft_printf(0);
+// 	printf("%d\n" , a);
 
-// 	// printf("\n");
-//     printf("%d\n" , a);
+//     b = printf(0);
 //     printf("%d\n" , b);
 //     return (0);
 // }

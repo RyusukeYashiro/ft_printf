@@ -6,7 +6,7 @@
 /*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 03:35:14 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/16 14:01:45 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:07:31 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_print_unit(unsigned int c)
 	len = 0;
 	hold = ft_uitoa(c);
 	len = ft_print_str(hold);
+	free(hold);
 	return (len);
 }
 
