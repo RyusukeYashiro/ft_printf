@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
+/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:34:45 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/09 20:53:16 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2024/05/16 15:56:57 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,10 @@ int	ft_printf(const char *format, ...)
 // {
 //     int a;
 //     int b;
-//     a = ft_printf("ans = %Xです%p,%d\n" , 90, 70, NULL);
-//     b = printf("ans = %Xです%p,%d\n" , 90 , 70, NULL);
+//     a =ft_printf("%s", (char *)NULL);
+//     b =printf("%s", (char *)NULL);
+
+// 	// printf("\n");
 //     printf("%d\n" , a);
 //     printf("%d\n" , b);
 //     return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
+/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 03:35:14 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/09 19:00:57 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2024/05/16 14:01:45 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ int	ft_print_unit(unsigned int c)
 
 	len = 0;
 	hold = ft_uitoa(c);
-	if (!hold)
-		return (0);
 	len = ft_print_str(hold);
 	return (len);
 }
