@@ -6,7 +6,7 @@
 /*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 05:34:45 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/16 19:42:03 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:46:58 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ int	ft_printf(const char *format, ...)
 // {
 //     int a;
 //     int b;
-//     a = ft_printf(0);
+//     a = ft_printf("%s" , (void *)NULL);
 // 	printf("%d\n" , a);
 
-//     b = printf(0);
+//     b = printf("%s" , (void *)NULL);
 //     printf("%d\n" , b);
 //     return (0);
 // }
-// gcc -Iinclude -o test srcs/ft_printf.c Libft/libft.a libftprintf.a
+//  gcc -Iinclude -o test srcs/ft_printf.c Libft/libft.a libftprintf.a

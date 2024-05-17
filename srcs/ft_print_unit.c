@@ -6,7 +6,7 @@
 /*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 03:35:14 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/05/16 19:07:31 by ryyashir         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:02:06 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	*ft_uitoa(unsigned int c)
 	int		len;
 
 	len = ft_uni_num_len(c);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	 str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	str[len] = '\0';
 	if (c == 0)
 		*str = '0';
